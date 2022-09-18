@@ -2,10 +2,7 @@ version: 0.0
 os: linux
 
 files:
-  - source: demo-0.0.1-SNAPSHOT.jar
-    destination: /home/ec2-user/server
-    overwrite: yes
-  - source: scripts/*.sh
+  - source: /
     destination: /home/ec2-user/server
     overwrite: yes
 permissions:
