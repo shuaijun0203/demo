@@ -5,6 +5,9 @@ files:
   - source: demo-0.0.1-SNAPSHOT.jar
     destination: /home/ec2-user/server
     overwrite: yes
+  - source: scripts/*.sh
+    destination: /home/ec2-user/server
+    overwrite: yes
 permissions:
   - object: /
     pattern: "**"
