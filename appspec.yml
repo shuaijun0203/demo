@@ -1,0 +1,30 @@
+version: 0.0
+os: linux
+
+files:
+  - source: demo-0.0.1-SNAPSHOT.jar
+    destination: /home/ec2-user/server
+    overwrite: yes
+permissions:
+  - object: /
+    pattern: "**"
+    owner: root
+    group: root
+
+hooks:
+  BeforeInstall:
+    - location: server_clear.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: fix_privileges.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: server_start.sh
+      timeout: 20
+      runas: root
+  ApplicationStop:
+    - location: server_stop.sh
+      timeout: 20
+      runas: root
