@@ -30,6 +30,7 @@ dependencies {
 	implementation group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: '1.12.300'
 	//implementation('mysql:mysql-connector-java:8.0.30')
 	runtimeOnly('com.h2database:h2')
+	runtimeOnly 'org.postgresql:postgresql'
 
 }
 
