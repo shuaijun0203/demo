@@ -14,8 +14,6 @@ import java.nio.charset.StandardCharsets;
 public class DemoApplication {
 
 	public static void main(String[] args) throws Exception{
-		System.out.println("Hello World!");
-
 		ConnectionFactory factory = new ConnectionFactory();
 		factory.setHost("54.248.198.226");
 		factory.setPort(5672);
@@ -29,8 +27,8 @@ public class DemoApplication {
 		channel.basicPublish(exchange_name, "", null, message.getBytes(StandardCharsets.UTF_8));
 		System.out.println("send:" + message);
 
-		//SpringApplication.run(DemoApplication.class, args);
-		System.exit(SpringApplication.exit(SpringApplication.run(DemoApplication.class, args)));
+		SpringApplication.run(DemoApplication.class, args);
+		//System.exit(SpringApplication.exit(SpringApplication.run(DemoApplication.class, args)));
 	}
 
 }
